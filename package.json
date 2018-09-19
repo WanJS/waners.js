@@ -1,7 +1,7 @@
 {
-  "name": "ethers",
-  "version": "4.0.0-beta.14",
-  "description": "Ethereum wallet library.",
+  "name": "waners",
+  "version": "4.0.0-beta.15",
+  "description": "Wanchain wallet library.",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -36,8 +36,8 @@
     "dts-bundle": "^0.7.3",
     "eslint": "^5.0.1",
     "eslint-plugin-promise": "^3.8.0",
-    "ethereumjs-tx": "^1.3.5",
-    "ethereumjs-util": "^5.2.0",
+    "wanchainjs-tx": "^1.3.5",
+    "wanchainjs-util": "^5.2.0",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-sourcemaps": "^2.6.4",
@@ -55,14 +55,14 @@
   },
   "browser": "./dist/ethers.js",
   "keywords": [
-    "ethereum",
+    "wanchain",
     "library",
     "wallet"
   ],
-  "author": "Richard Moore <me@ricmoo.com>",
+  "author": "Tyiron70 <tyrion70@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ethers-io/ethers.js.git"
+    "url": "git://github.com/WanJS/waners.js.git"
   },
   "license": "MIT"
 }
