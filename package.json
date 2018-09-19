@@ -1,6 +1,6 @@
 {
   "name": "waners",
-  "version": "4.0.0-beta.15",
+  "version": "4.0.0-beta.16",
   "description": "Wanchain wallet library.",
   "main": "./index.js",
   "types": "./index.d.ts",

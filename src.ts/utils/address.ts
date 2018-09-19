@@ -34,10 +34,10 @@ function getChecksumAddress(address: string): string {
     hashed = arrayify(keccak256(hashed));
 
     for (var i = 0; i < 40; i += 2) {
-        if ((hashed[i >> 1] >> 4) >= 8) {
+        if ((hashed[i >> 1] >> 4) < 8) {
             chars[i] = chars[i].toUpperCase();
         }
-        if ((hashed[i >> 1] & 0x0f) >= 8) {
+        if ((hashed[i >> 1] & 0x0f) < 8) {
             chars[i + 1] = chars[i + 1].toUpperCase();
         }
     }
