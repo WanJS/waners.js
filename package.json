@@ -1,7 +1,7 @@
 {
-  "name": "ethers",
+  "name": "waners",
   "version": "3.0.27",
-  "description": "Ethereum wallet library.",
+  "description": "Wanchain wallet library.",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js",
@@ -44,13 +44,13 @@
     "xmlhttprequest": "./providers/browser-xmlhttprequest.js"
   },
   "keywords": [
-    "ethereum",
+    "wanchain",
     "wallet"
   ],
-  "author": "Richard Moore <me@ricmoo.com>",
+  "author": "Tyrion70 <tyrion70@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ethers-io/ethers-wallet.git"
+    "url": "git://github.com/WanJS/waners.js.git"
   },
   "license": "MIT"
 }

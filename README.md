@@ -1,9 +1,23 @@
-ethers.js
+waners.js
 =========
 
-[![npm version](https://badge.fury.io/js/ethers.svg)](https://badge.fury.io/js/ethers)
+[![CircleCI][circle-image]][circle-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![dependency status][dep-image]][dep-url]
+[![NPM][npm-image]][npm-url]
 
-Complete Ethereum wallet implementation and utilities in JavaScript.
+[circle-image]: https://circleci.com/gh/WanJS/waners.js.svg?style=svg
+[circle-url]: https://circleci.com/gh/WanJS/waners.js
+[dep-image]: https://david-dm.org/WanJS/waners.js.svg
+[dep-url]: https://david-dm.org/WanJS/waners.js
+[coveralls-image]: https://coveralls.io/repos/github/WanJS/waners.js/badge.svg?branch=dev
+[coveralls-url]: https://coveralls.io/github/WanJS/waners.js?branch=dev
+[npm-image]: http://img.shields.io/npm/v/waners.js.svg
+[npm-url]: https://www.npmjs.org/package/waners.js
+
+Complete Wanchain wallet implementation and utilities in JavaScript.
+
+Only adapted the address.js file because this is a dependency of wan3.
 
 **Features:**
 
@@ -20,25 +34,6 @@ Complete Ethereum wallet implementation and utilities in JavaScript.
 - **MIT License** (including ALL dependencies); completely open source to do with as you please
 
 
-Installing
-----------
-
-To use in a browser:
-
-```html
-<script charset="utf-8"
-        src="https://cdn.ethers.io/scripts/ethers-v3.min.js"
-        type="text/javascript">
-</script>
-```
-
-To use in [node.js](https://nodejs.org/):
-
-```
-/Users/ethers/my-app> npm install --save ethers
-```
-
-
 
 Documentation
 -------------
@@ -49,15 +44,10 @@ Documentation is generated using [Sphinx](http://www.sphinx-doc.org) and can be 
 
 
 
-Donations
----------
-
-I do this because I love it, but if you want to buy me a coffee, I won't say no. **:o)**
-
-Ethereum: `0xEA517D5a070e6705Cc5467858681Ed953d285Eb9`
-
-
 License
 -------
 
+Copyright 2018 Tyrion70
+Original Copyright 2018 Richard Moore
+ 
 Completely MIT Licensed. Including ALL dependencies.

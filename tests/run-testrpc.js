@@ -5,9 +5,9 @@
 //
 // See: https://github.com/ethers-io/ethers.js/issues/45
 //
-// Please run `npm install ethereumjs-testrpc` before using this testcase
+// Please run `npm install wanache-cli` before using this testcase
 
-var TestRPC = require("ethereumjs-testrpc");
+var TestRPC = require("wanache-cli");
 
 var providers = require('../providers');
 var Wallet = require('../wallet/wallet');
