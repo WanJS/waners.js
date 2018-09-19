@@ -4910,51 +4910,11 @@ module.exports = JsonRpcProvider;
 
 },{"../utils/address":15,"../utils/convert":19,"../utils/errors":21,"../utils/properties":24,"../utils/utf8":27,"./provider.js":13}],12:[function(require,module,exports){
 module.exports={
-    "unspecified": {
-        "chainId": 0,
-        "name": "unspecified"
-    },
 
-    "homestead": {
-        "chainId": 1,
-        "ensAddress": "0x314159265dd8dbb310642f98f50c066173c1259b",
-        "name": "homestead"
-    },
     "mainnet": {
         "chainId": 1,
         "ensAddress": "0x314159265dd8dbb310642f98f50c066173c1259b",
         "name": "homestead"
-    },
-
-    "morden": {
-        "chainId": 2,
-        "name": "morden"
-    },
-
-    "ropsten": {
-        "chainId": 3,
-        "ensAddress": "0x112234455c3a32fd11230c42e7bccd4a84e02010",
-        "name": "ropsten"
-    },
-    "testnet": {
-        "chainId": 3,
-        "ensAddress": "0x112234455c3a32fd11230c42e7bccd4a84e02010",
-        "name": "ropsten"
-    },
-
-    "rinkeby": {
-        "chainId": 4,
-        "name": "rinkeby"
-    },
-
-    "kovan": {
-        "chainId": 42,
-        "name": "kovan"
-    },
-
-    "classic": {
-        "chainId": 61,
-        "name": "classic"
     }
 }
 
@@ -6240,10 +6200,10 @@ function getChecksumAddress(address) {
 
     address = address.substring(2).split('');
     for (var i = 0; i < 40; i += 2) {
-        if ((hashed[i >> 1] >> 4) >= 8) {
+        if ((hashed[i >> 1] >> 4) < 8) {
             address[i] = address[i].toUpperCase();
         }
-        if ((hashed[i >> 1] & 0x0f) >= 8) {
+        if ((hashed[i >> 1] & 0x0f) < 8) {
             address[i + 1] = address[i + 1].toUpperCase();
         }
     }

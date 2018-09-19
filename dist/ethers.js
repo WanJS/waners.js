@@ -9927,7 +9927,63 @@ uuid.unparse = unparse;
 module.exports = uuid;
 
 },{"./rng":44}],46:[function(require,module,exports){
-module.exports={"version":"3.0.27"}
+module.exports={
+  "name": "waners",
+  "version": "3.0.27",
+  "description": "Wanchain wallet library.",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js",
+    "test": "if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi",
+    "test-node": "./node_modules/.bin/mocha tests/test-*.js",
+    "test-phantomjs": "./node_modules/.bin/grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html",
+    "version": "grunt dist"
+  },
+  "dependencies": {
+    "aes-js": "3.0.0",
+    "bn.js": "^4.4.0",
+    "elliptic": "6.3.3",
+    "hash.js": "^1.0.0",
+    "inherits": "2.0.1",
+    "js-sha3": "0.5.7",
+    "scrypt-js": "2.0.3",
+    "setimmediate": "1.0.4",
+    "uuid": "2.0.1",
+    "xmlhttprequest": "1.8.0"
+  },
+  "devDependencies": {
+    "browserify-zlib": "^0.2.0",
+    "eslint": "^5.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "mocha": "^5.2.0",
+    "mocha-phantomjs-core": "2.1.2",
+    "solc": "0.4.20",
+    "web3": "0.20.2"
+  },
+  "browser": {
+    "fs": "./tests/browser-fs.js",
+    "zlib": "browserify-zlib",
+    "./utils/base64.js": "./utils/browser-base64.js",
+    "./utils/random-bytes.js": "./utils/browser-random-bytes.js",
+    "./providers/ipc-provider.js": "./utils/empty.js",
+    "xmlhttprequest": "./providers/browser-xmlhttprequest.js"
+  },
+  "keywords": [
+    "wanchain",
+    "wallet"
+  ],
+  "author": "Tyrion70 <tyrion70@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WanJS/waners.js.git"
+  },
+  "license": "MIT"
+}
+
 },{}],47:[function(require,module,exports){
 'use strict';
 
@@ -10719,51 +10775,11 @@ module.exports = JsonRpcProvider;
 
 },{"../utils/address":57,"../utils/convert":62,"../utils/errors":64,"../utils/properties":71,"../utils/utf8":77,"./provider.js":54}],53:[function(require,module,exports){
 module.exports={
-    "unspecified": {
-        "chainId": 0,
-        "name": "unspecified"
-    },
 
-    "homestead": {
-        "chainId": 1,
-        "ensAddress": "0x314159265dd8dbb310642f98f50c066173c1259b",
-        "name": "homestead"
-    },
     "mainnet": {
         "chainId": 1,
         "ensAddress": "0x314159265dd8dbb310642f98f50c066173c1259b",
         "name": "homestead"
-    },
-
-    "morden": {
-        "chainId": 2,
-        "name": "morden"
-    },
-
-    "ropsten": {
-        "chainId": 3,
-        "ensAddress": "0x112234455c3a32fd11230c42e7bccd4a84e02010",
-        "name": "ropsten"
-    },
-    "testnet": {
-        "chainId": 3,
-        "ensAddress": "0x112234455c3a32fd11230c42e7bccd4a84e02010",
-        "name": "ropsten"
-    },
-
-    "rinkeby": {
-        "chainId": 4,
-        "name": "rinkeby"
-    },
-
-    "kovan": {
-        "chainId": 42,
-        "name": "kovan"
-    },
-
-    "classic": {
-        "chainId": 61,
-        "name": "classic"
     }
 }
 
@@ -13069,10 +13085,10 @@ function getChecksumAddress(address) {
 
     address = address.substring(2).split('');
     for (var i = 0; i < 40; i += 2) {
-        if ((hashed[i >> 1] >> 4) >= 8) {
+        if ((hashed[i >> 1] >> 4) < 8) {
             address[i] = address[i].toUpperCase();
         }
-        if ((hashed[i >> 1] & 0x0f) >= 8) {
+        if ((hashed[i >> 1] & 0x0f) < 8) {
             address[i + 1] = address[i + 1].toUpperCase();
         }
     }

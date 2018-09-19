@@ -6097,10 +6097,10 @@ function getChecksumAddress(address) {
 
     address = address.substring(2).split('');
     for (var i = 0; i < 40; i += 2) {
-        if ((hashed[i >> 1] >> 4) >= 8) {
+        if ((hashed[i >> 1] >> 4) < 8) {
             address[i] = address[i].toUpperCase();
         }
-        if ((hashed[i >> 1] & 0x0f) >= 8) {
+        if ((hashed[i >> 1] & 0x0f) < 8) {
             address[i + 1] = address[i + 1].toUpperCase();
         }
     }
